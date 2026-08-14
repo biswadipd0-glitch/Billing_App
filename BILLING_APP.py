@@ -6,7 +6,7 @@ import streamlit as st
 from mysql.connector import Error
 
 # Import QR scanner from the separate Python file
-import qr_code_scanner_feb_2026
+import qr_scanner
 
 
 # ---------------------------------------------------------
