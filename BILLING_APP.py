@@ -19,26 +19,27 @@ st.set_page_config(
 )
 
 st.title("🛒 Retail Billing System")
-st.caption("Streamlit + MySQL Localhost + OpenCV QR Scanner")
-
-
-# ---------------------------------------------------------
-# MYSQL LOCALHOST CONFIGURATION
-# ---------------------------------------------------------
-MYSQL_CONFIG = {
-    "host": "localhost",
-    "user": "root",
-    "password": "R@jdeep123",
-    "database": "retail_final_proj_feb_2026",
-    "port": 3306
-}
 
 
 # ---------------------------------------------------------
 # DATABASE CONNECTION
 # ---------------------------------------------------------
 def get_connection():
-    return mysql.connector.connect(**MYSQL_CONFIG)
+
+    return mysql.connector.connect(
+
+        host=st.secrets["MYSQL_HOST"],
+
+        port=int(
+            st.secrets["MYSQL_PORT"]
+        ),
+
+        user=st.secrets["MYSQL_USER"],
+
+        password=st.secrets["MYSQL_PASSWORD"],
+
+        database=st.secrets["MYSQL_DATABASE"]
+    )
 
 
 # ---------------------------------------------------------
