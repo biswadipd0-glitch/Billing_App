@@ -4,7 +4,7 @@ from pyzbar.pyzbar import decode
 from warnings import filterwarnings
 filterwarnings(action='ignore')
 def qr_code_scanner():
-    cap = cv2.VideoCapture(1)
+    cap = cv2.VideoCapture(0)
     while True:
 
         ret, frame = cap.read()
